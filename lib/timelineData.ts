@@ -217,11 +217,11 @@ export const timelineData: TimelineItem[] = [
     id: 'jan-22',
     date: 'Jan 22, 2026',
     category: 'Estimations',
-    title: 'Material Library Follow-up',
-    description: 'Prathamesh requested KB team review Material Library initial list, add standards/coefficients, verify naming.',
+    title: 'Material Library Follow-up (Low Priority)',
+    description: 'Prathamesh requested KB team review Material Library initial list. Marked as low priority task.',
     status: 'pending',
-    delayDays: 999,
-    delayReason: 'Outstanding since Jan 22 - KB has not completed Material Library review (40+ days overdue)',
+    delayDays: 10,
+    delayReason: '10 day delay in providing standards/coefficients',
   },
 
   {

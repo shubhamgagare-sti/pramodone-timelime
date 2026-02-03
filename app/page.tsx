@@ -5,11 +5,7 @@ import BottleneckCards from '@/components/BottleneckCards';
 import CommunicationGaps from '@/components/CommunicationGaps';
 import DelaySummary from '@/components/DelaySummary';
 import RootCauseAnalysis from '@/components/RootCauseAnalysis';
-import SiyaratechAdditions from '@/components/SiyaratechAdditions';
-import Timeline from '@/components/Timeline';
-import DeliverablesTable from '@/components/DeliverablesTable';
-import FutureStrategy from '@/components/FutureStrategy';
-import ProjectRoadmap from '@/components/ProjectRoadmap';
+import TabbedStrategySection from '@/components/TabbedStrategySection';
 
 export const metadata = {
   title: 'Communication Breakdown Analysis | Siyaratech Report',
@@ -27,11 +23,7 @@ export default function Home() {
       <CommunicationGaps />
       <DelaySummary />
       <RootCauseAnalysis />
-      <SiyaratechAdditions />
-      <Timeline />
-      <DeliverablesTable />
-      <ProjectRoadmap />
-      <FutureStrategy />
+      <TabbedStrategySection />
 
       <footer className="py-8 text-center text-gray-600 text-sm border-t border-white/5">
         <p>&copy; 2025 Siyaratech | Internal Audit Report</p>
