@@ -9,6 +9,7 @@ import {
   Plus,
   ChevronRight,
   Zap,
+  ClipboardList,
 } from 'lucide-react';
 
 interface Feature {
@@ -66,24 +67,14 @@ const SiyaratechAdditions: React.FC = () => {
       impact: 'Provides irrefutable proof-of-work and site presence verification',
     },
     {
-      id: 'minor-features-1',
-      name: 'Mobile App Features',
+      id: 'task-centralised-system',
+      name: 'Task Centralised System',
       description:
-        'Offline-first mobile capabilities with push notifications, field data entry, photo uploads, real-time sync, and worker dashboards.',
-      icon: <Zap className="w-6 h-6" />,
-      category: 'minor',
-      modules: ['Mobile App', 'Worker Portal', 'Real-time Updates'],
-      impact: 'Enables on-site workers to access ERP without internet connectivity',
-    },
-    {
-      id: 'minor-features-2',
-      name: 'Advanced Analytics & Reporting',
-      description:
-        'Custom dashboards, KPI tracking, predictive analytics for resource planning, cost analysis, and executive summary reports.',
-      icon: <Zap className="w-6 h-6" />,
-      category: 'minor',
-      modules: ['Analytics', 'BI Tools', 'Forecasting'],
-      impact: 'Transforms raw operational data into actionable business intelligence',
+        'A unified system offering complete transparency into resource utilisation, ensuring optimal allocation and efficient task tracking.',
+      icon: <ClipboardList className="w-6 h-6" />,
+      category: 'advanced',
+      modules: ['Task Management', 'Resource Allocation', 'Utilization Tracking'],
+      impact: 'Provides real-time visibility into workforce and resource efficiency',
     },
   ];
 
@@ -108,8 +99,8 @@ const SiyaratechAdditions: React.FC = () => {
           <span className="text-green-300 text-sm font-semibold">Siyaratech Additions</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          Enhanced Capabilities &<br />
-          <span className="text-gradient">Value-Added Features</span>
+          Additional Things from<br />
+          <span className="text-gradient">Siyaratech Team</span>
         </h2>
         <p className="text-gray-400 max-w-3xl mx-auto text-lg">
           Beyond the original 12 modules, Siyaratech has engineered advanced capabilities
@@ -211,9 +202,9 @@ const SiyaratechAdditions: React.FC = () => {
       </div>
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
         <div className="glass-card p-6 rounded-xl text-center">
-          <div className="text-3xl font-bold text-purple-400 mb-2">6</div>
+          <div className="text-3xl font-bold text-purple-400 mb-2">5</div>
           <div className="text-sm text-gray-400">New Capabilities</div>
         </div>
         <div className="glass-card p-6 rounded-xl text-center">
@@ -221,12 +212,8 @@ const SiyaratechAdditions: React.FC = () => {
           <div className="text-sm text-gray-400">Core Modules</div>
         </div>
         <div className="glass-card p-6 rounded-xl text-center">
-          <div className="text-3xl font-bold text-emerald-400 mb-2">2</div>
+          <div className="text-3xl font-bold text-emerald-400 mb-2">3</div>
           <div className="text-sm text-gray-400">Advanced Features</div>
-        </div>
-        <div className="glass-card p-6 rounded-xl text-center">
-          <div className="text-3xl font-bold text-teal-400 mb-2">2</div>
-          <div className="text-sm text-gray-400">Enhancements</div>
         </div>
       </div>
 

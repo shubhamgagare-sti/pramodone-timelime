@@ -34,7 +34,7 @@ export default function Home() {
       <FutureStrategy />
 
       <footer className="py-8 text-center text-gray-600 text-sm border-t border-white/5">
-        <p>&copy; 2026 Siyaratech. Confidential Report.</p>
+        <p>&copy; 2025 Siyaratech | Internal Audit Report</p>
       </footer>
     </div>
   );
