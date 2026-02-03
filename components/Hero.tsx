@@ -1,0 +1,87 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { AlertTriangle, FileX, Clock, Database } from 'lucide-react';
+
+const Hero: React.FC = () => {
+    return (
+        <div className="relative w-full min-h-[80vh] flex flex-col items-center justify-center p-6 overflow-hidden">
+
+            {/* Background Glows */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px] -z-10 animate-float" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/10 rounded-full blur-[100px] -z-10 animate-float" style={{ animationDelay: '2s' }} />
+
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center max-w-4xl mx-auto"
+            >
+                <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium tracking-wide">
+                    Siyaratech vs Karan Builders Collaboration Report
+                </div>
+
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+                    Communication <br />
+                    <span className="text-gradient hover:opacity-90 transition-opacity">Breakdown Analysis</span>
+                </h1>
+
+                <p className="text-lg md:text-xl text-secondary max-w-2xl mx-auto mb-12 leading-relaxed">
+                    A visual timeline identifying critical bottlenecks, document gaps, and scope creep impacting the development velocity and alignment of the MD's vision.
+                </p>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                    <StatCard
+                        icon={<FileX className="w-6 h-6 text-red-400" />}
+                        value="0"
+                        label="MoMs Shared by KB"
+                        delay={0.2}
+                    />
+                    <StatCard
+                        icon={<Clock className="w-6 h-6 text-amber-400" />}
+                        value="7 Days"
+                        label="Avg. Feedback Lag"
+                        delay={0.3}
+                    />
+                    <StatCard
+                        icon={<AlertTriangle className="w-6 h-6 text-orange-400" />}
+                        value="Critical"
+                        label="Scope Creep"
+                        delay={0.4}
+                    />
+                    <StatCard
+                        icon={<Database className="w-6 h-6 text-blue-400" />}
+                        value="Oct '25"
+                        label="Pending Access Matrix"
+                        delay={0.5}
+                    />
+                </div>
+            </motion.div>
+        </div>
+    );
+};
+
+interface StatCardProps {
+    icon: React.ReactNode;
+    value: string;
+    label: string;
+    delay: number;
+}
+
+const StatCard: React.FC<StatCardProps> = ({ icon, value, label, delay }) => (
+    <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay }}
+        className="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group bg-opacity-10"
+    >
+        <div className="mb-3 p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+            {icon}
+        </div>
+        <div className="text-3xl font-bold text-primary mb-1">{value}</div>
+        <div className="text-sm text-secondary">{label}</div>
+    </motion.div>
+);
+
+export default Hero;
