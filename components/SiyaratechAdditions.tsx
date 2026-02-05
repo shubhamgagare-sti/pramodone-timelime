@@ -11,6 +11,7 @@ import {
   Zap,
   ClipboardList,
   LayoutDashboard,
+  CheckSquare,
 } from 'lucide-react';
 
 interface Feature {
@@ -86,6 +87,16 @@ const SiyaratechAdditions: React.FC = () => {
       category: 'advanced',
       modules: ['All Modules', 'Site Ops', 'Excluding Contracts'],
       impact: 'Provides a consistent, premium user experience across the entire platform',
+    },
+    {
+      id: 'designation-checklist',
+      name: 'Designation-based Checklist',
+      description:
+        'New addition: Role-specific checklists allowing staff to mark tasks as completed on a daily, monthly, and yearly basis.',
+      icon: <CheckSquare className="w-6 h-6" />,
+      category: 'minor',
+      modules: ['HR', 'Operations', 'Compliance', 'Daily Reporting'],
+      impact: 'Ensures accountability and routine task completion tracking per designation',
     },
   ];
 
