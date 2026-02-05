@@ -2,13 +2,16 @@
 
 import React from 'react';
 import { bottlenecks } from '@/lib/timelineData';
-import { FileX, Layers, Clock, AlertTriangle } from 'lucide-react';
+import { FileX, Layers, Clock, AlertTriangle, Lightbulb, FileQuestion, Lock } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
     FileX: <FileX className="w-8 h-8" />,
     Layers: <Layers className="w-8 h-8" />,
     Clock: <Clock className="w-8 h-8" />,
     AlertTriangle: <AlertTriangle className="w-8 h-8" />,
+    Lightbulb: <Lightbulb className="w-8 h-8" />,
+    FileQuestion: <FileQuestion className="w-8 h-8" />,
+    Lock: <Lock className="w-8 h-8" />,
 };
 
 const BottleneckCards: React.FC = () => {

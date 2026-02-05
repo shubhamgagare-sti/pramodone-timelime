@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, FileX, Clock, Database } from 'lucide-react';
+import { TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const Hero: React.FC = () => {
     return (
@@ -62,7 +63,55 @@ const Hero: React.FC = () => {
                     />
                 </div>
             </motion.div>
-        </div>
+
+            {/* Navigation Tabs */}
+            <div className="w-full mt-12 sticky bottom-4 md:bottom-8 z-50 flex justify-center">
+                <TabsList className="bg-black/60 backdrop-blur-xl border border-white/10 p-1.5 rounded-full h-auto flex-wrap justify-center overflow-x-auto max-w-full shadow-2xl shadow-indigo-500/20">
+                    <TabsTrigger
+                        value="analysis"
+                        className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300"
+                    >
+                        Analysis
+                    </TabsTrigger>
+                    <TabsTrigger
+                        value="additional-features"
+                        className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300"
+                    >
+                        Additional Features
+                    </TabsTrigger>
+                    <TabsTrigger
+                        value="timeline"
+                        className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300"
+                    >
+                        Timeline
+                    </TabsTrigger>
+                    <TabsTrigger
+                        value="deliverables"
+                        className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300"
+                    >
+                        Deliverables
+                    </TabsTrigger>
+                    <TabsTrigger
+                        value="training"
+                        className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300"
+                    >
+                        Training
+                    </TabsTrigger>
+                    <TabsTrigger
+                        value="roadmap"
+                        className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300"
+                    >
+                        Roadmap
+                    </TabsTrigger>
+                    <TabsTrigger
+                        value="future-strategy"
+                        className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300"
+                    >
+                        Future Strategy
+                    </TabsTrigger>
+                </TabsList>
+            </div >
+        </div >
     );
 };
 

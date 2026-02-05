@@ -125,13 +125,7 @@ const ProjectRoadmap = () => {
                                         <p className="text-sm text-gray-400">Waiting for workflow explanation.</p>
                                     </div>
                                 </li>
-                                <li className="flex items-start gap-3">
-                                    <ArrowRight className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                                    <div>
-                                        <p className="text-gray-200 font-medium">Future: Reports</p>
-                                        <p className="text-sm text-gray-400">Reports generation will continue once Billing is completed.</p>
-                                    </div>
-                                </li>
+
                             </ul>
 
                             <div className="mt-6 p-4 bg-indigo-500/10 rounded-xl border border-indigo-500/20">
@@ -152,7 +146,7 @@ const ProjectRoadmap = () => {
                         {/* Deployment & Training */}
                         <motion.div
                             whileHover={{ scale: 1.02 }}
-                            className="bg-white/5 rounded-2xl p-8 border border-white/5 hover:border-indigo-500/30 transition-all"
+                            className="lg:col-span-2 bg-white/5 rounded-2xl p-8 border border-white/5 hover:border-indigo-500/30 transition-all"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="p-3 bg-teal-500/20 rounded-lg">
@@ -164,30 +158,95 @@ const ProjectRoadmap = () => {
                                 </div>
                             </div>
 
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-3">
-                                    <Globe className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
-                                    <div>
-                                        <p className="text-gray-200 font-medium">UAT Verification</p>
-                                        <p className="text-sm text-gray-400 break-all">pramodone.karanbuilders.com</p>
-                                        <p className="text-xs text-gray-500 mt-0.5">Continuous testing apart from UAT.</p>
+                            <div className="mt-8">
+                                {/* Step 1: Initial Deployment */}
+                                <div className="flex gap-6">
+                                    <div className="flex flex-col items-center relative shrink-0">
+                                        <div className="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                                            <Globe className="w-6 h-6 text-blue-300" />
+                                        </div>
+                                        <div className="w-0.5 grow bg-gradient-to-b from-blue-500 to-teal-500 my-2"></div>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <PlayCircle className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
-                                    <div>
-                                        <p className="text-gray-200 font-medium">In-App Training</p>
-                                        <p className="text-sm text-gray-400">Training videos explaining module workflows accessible directly within the app.</p>
+                                    <div className="pb-12 flex-1">
+                                        <div className="p-6 rounded-xl bg-blue-500/5 border border-blue-500/20 hover:border-blue-500/40 transition-all">
+                                            <h4 className="text-xl font-bold text-blue-200 mb-2">1. Initial Deployment</h4>
+                                            <p className="text-gray-300 leading-relaxed">
+                                                Siyaratech team will deploy <span className="text-blue-300 font-semibold">all modules</span> on UAT environment as the first step on <span className="text-blue-300 font-bold">Feb 20</span>.
+                                            </p>
+                                        </div>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <FileText className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
-                                    <div>
-                                        <p className="text-gray-200 font-medium">Documentation</p>
-                                        <p className="text-sm text-gray-400">Released progressively after Feb 25th.</p>
+                                </div>
+
+                                {/* Step 2: Training & UAT */}
+                                <div className="flex gap-6">
+                                    <div className="flex flex-col items-center relative shrink-0">
+                                        <div className="w-12 h-12 rounded-full bg-teal-500/20 border border-teal-500/30 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(20,184,166,0.5)]">
+                                            <Globe className="w-6 h-6 text-teal-300" />
+                                        </div>
+                                        <div className="w-0.5 grow bg-gradient-to-b from-teal-500 to-indigo-500 my-2"></div>
                                     </div>
-                                </li>
-                            </ul>
+                                    <div className="pb-12 flex-1">
+                                        <div className="p-6 rounded-xl bg-teal-500/5 border border-teal-500/20 hover:border-teal-500/40 transition-all">
+                                            <h4 className="text-xl font-bold text-teal-200 mb-2">2. Training & UAT</h4>
+                                            <p className="text-gray-300 leading-relaxed mb-3">
+                                                KB team to go through training videos & UAT from <span className="text-teal-300 font-bold">Feb 21 - Feb 28</span> at <span className="text-teal-300 break-all">pramodone.karanbuilders.com</span>.
+                                            </p>
+                                            <p className="text-gray-300 leading-relaxed mb-3">
+                                                <span className="text-teal-300 font-semibold">Action Required:</span> We need user permissions (Access Matrix) defined: <span className="italic">who will have how much access</span>, once you try out the UAT environment.
+                                            </p>
+                                            <div className="bg-teal-500/10 border border-teal-500/20 rounded-lg p-3 mb-3">
+                                                <p className="text-xs text-teal-200 leading-relaxed">
+                                                    <span className="font-bold text-teal-300 block mb-1">Critical:</span>
+                                                    Any new requirements not mentioned earlier will be treated as <span className="text-white font-semibold">Change Requests</span> and will delay production deployment.
+                                                </p>
+                                            </div>
+                                            <p className="text-sm text-teal-200/70 border-l-2 border-teal-500/30 pl-3 italic">
+                                                "If doubts persist, Siyaratech team will conduct clarification sessions with respective HODs to ensure full understanding."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Step 3: Reports */}
+                                <div className="flex gap-6">
+                                    <div className="flex flex-col items-center relative shrink-0">
+                                        <div className="w-12 h-12 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                                            <FileText className="w-6 h-6 text-indigo-300" />
+                                        </div>
+                                        <div className="w-0.5 grow bg-gradient-to-b from-indigo-500 to-emerald-500 my-2"></div>
+                                    </div>
+                                    <div className="pb-12 flex-1">
+                                        <div className="p-6 rounded-xl bg-indigo-500/5 border border-indigo-500/20 hover:border-indigo-500/40 transition-all">
+                                            <h4 className="text-xl font-bold text-indigo-200 mb-2">3. Reports</h4>
+                                            <p className="text-gray-300 leading-relaxed">
+                                                Work on reports begins only after UAT confirms no further changes. <span className="text-indigo-300/80 italic text-sm block mt-1">Crucial for data stability</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Step 4: Production */}
+                                <div className="flex gap-6">
+                                    <div className="flex flex-col items-center relative shrink-0">
+                                        <div className="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                                            <Rocket className="w-6 h-6 text-emerald-300" />
+                                        </div>
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="p-6 rounded-xl bg-emerald-500/5 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
+                                            <h4 className="text-xl font-bold text-emerald-200 mb-2">4. Production Deployment</h4>
+                                            <p className="text-gray-300 leading-relaxed mb-3">
+                                                Production deployment proceeds only after all modules are confirmed ready by KB team.
+                                            </p>
+                                            <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-3">
+                                                <p className="text-sm text-emerald-100 leading-relaxed">
+                                                    <span className="font-semibold text-emerald-300">Handling New Changes:</span> New requirements will be analyzed for feasibility in the current release. They must be developed, tested, and verified on UAT first. Depending on the Change Request, they will either be part of this production roll-out or scheduled for the next release.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
 
                     </div>

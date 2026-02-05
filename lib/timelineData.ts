@@ -302,6 +302,13 @@ export const bottlenecks = [
     icon: 'FileQuestion',
     impact: 'high',
   },
+  {
+    id: 'b6',
+    title: 'Ad-Hoc Workflow Discovery',
+    description: 'New workflows (e.g., Subcontractor Billing) were often shared ad-hoc during discussions rather than documented upfront by HODs, leading to unexpected scope expansion.',
+    icon: 'Lightbulb',
+    impact: 'high',
+  },
 ];
 
 export const futureProtocol = [
