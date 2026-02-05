@@ -33,7 +33,7 @@ const ProjectRoadmap = () => {
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
                             <div className="px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3">
                                 <span className="text-emerald-400 font-semibold uppercase tracking-wider text-sm">Target Delivery</span>
-                                <span className="text-white font-bold text-lg">February 25, 2026</span>
+                                <span className="text-white font-bold text-lg">February 20, 2026</span>
                             </div>
                             <div className="px-6 py-3 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center gap-3">
                                 <BadgeAlert className="w-5 h-5 text-amber-500" />
