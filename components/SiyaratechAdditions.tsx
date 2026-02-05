@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Zap,
   ClipboardList,
+  LayoutDashboard,
 } from 'lucide-react';
 
 interface Feature {
@@ -75,6 +76,16 @@ const SiyaratechAdditions: React.FC = () => {
       category: 'advanced',
       modules: ['Task Management', 'Resource Allocation', 'Utilization Tracking'],
       impact: 'Provides real-time visibility into workforce and resource efficiency',
+    },
+    {
+      id: 'frontend-scope',
+      name: 'Polished Frontend Scope',
+      description:
+        'Originally planned only for Site Ops, the polished frontend is now extended to all modules (except Contracts & Purchase).',
+      icon: <LayoutDashboard className="w-6 h-6" />,
+      category: 'advanced',
+      modules: ['All Modules', 'Site Ops', 'Excluding Contracts'],
+      impact: 'Provides a consistent, premium user experience across the entire platform',
     },
   ];
 
