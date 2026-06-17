@@ -2,7 +2,6 @@
 
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { timelineData } from '@/lib/timelineData';
 import { CheckCircle2, AlertCircle, Clock, FileWarning, XCircle, ArrowRight } from 'lucide-react';
 import clsx from 'clsx';
@@ -39,14 +38,8 @@ const Timeline: React.FC = () => {
 };
 
 const TimelineItem = ({ item, index }: { item: any, index: number }) => {
-    const isLeft = index % 2 === 0;
-
     return (
-        <motion.div
-            initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+        <div
             className={clsx(
                 "relative flex items-center mb-12",
                 "flex-row md:flex-row",
@@ -111,7 +104,7 @@ const TimelineItem = ({ item, index }: { item: any, index: number }) => {
                     )}
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
