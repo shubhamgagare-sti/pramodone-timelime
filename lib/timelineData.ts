@@ -8,6 +8,8 @@ export interface TimelineItem {
   icon?: string;
   delayDays?: number;
   delayReason?: string;
+  link?: string;
+  linkLabel?: string;
 }
 
 export const timelineData: TimelineItem[] = [
@@ -265,6 +267,24 @@ export const timelineData: TimelineItem[] = [
     status: 'gap',
   },
 
+  // February 2026
+  {
+    id: 'feb-06-mom',
+    date: 'Feb 06, 2026',
+    category: 'Meeting',
+    title: 'MoM — Project Execution & Accounting Workflow',
+    description: 'Key decisions: Rate Analysis to auto-pull labour and material costs; overheads and profit margins to be editable per project. Financial chain confirmed: WO/BOQ Acceptance (via Rate Analysis) → Budget → Execution → Monitoring actual vs. budget. New material additions require mandatory questionnaire + approval before library entry. Labour billing monthly; weekly Kharchi for labour contractors; Contractor Payable = Total − Kharchi. Petty cash shared weekly (primarily diesel procurement) with daily site report. Daily Cost Reports to cover HR, Resources, Material, Labour, and Machine/Human Salary. Material Library freeze set for EOD 11-Feb-2026 — MD and Karan Sir to finalize and lock; library becomes mandatory source for all Rate Analysis. Tally integration flagged as additional feature. KB team to provide permissions and share outstanding documents.',
+    status: 'completed',
+  },
+  {
+    id: 'feb-11-material-library-freeze',
+    date: 'Feb 11, 2026',
+    category: 'Milestone',
+    title: 'Material Library Freeze Deadline',
+    description: 'EOD deadline for MD Sir and Karan Sir to finalize and lock the Material Library in PramodOne. Once locked, this library becomes the mandatory source for all Rate Analysis costs. Task already added in PramodOne for KB team.',
+    status: 'pending',
+  },
+
   // March 2026 — Orchid Event, Site + HO Visit & Change Requests
   {
     id: 'mar-orchid-event',
@@ -274,6 +294,23 @@ export const timelineData: TimelineItem[] = [
     description: 'During the Orchid event, it was suggested to add Proforma Invoice and Tax Invoice generation into PramodOne to support client billing workflows and GST compliance documentation.',
     status: 'new-scope',
   },
+  {
+    id: 'mar-26-mom-subcon-labour',
+    date: 'Mar 26, 2026',
+    category: 'Meeting',
+    title: 'MoM — Subcontractor & Labour Module Demo',
+    description: 'Participants: Rohit Sonawale, Pramod Suryawanshi, Aishwarya Saha, Shubham Gagare, Prathamesh Malode. Demoed full subcontractor lifecycle: onboarding, workhead creation, payment stages, invoice generation, and task structures derived from project baselines. Key requirements raised: biometric fingerprint machine integration for digital labour onboarding; Task labour resource section to pull previous day\'s attendance count; auto-increment labour count on induction completion; labour transfer workflow between sites; timesheet module for granular productivity tracking; formal Subcontractor Exit Form for clearance and closure.',
+    status: 'completed',
+  },
+  {
+    id: 'mar-26-mom-hr',
+    date: 'Mar 26, 2026',
+    category: 'Meeting',
+    title: 'MoM — HR Module Demo',
+    description: 'Participants: Rohit Sonawale, Pramod Suryawanshi, Aishwarya Saha, Shubham Gagare, Prathamesh Malode. Full HR lifecycle demoed: employee management, talent acquisition, leave & attendance, payroll, expense claims, and separations. Decisions: Leave Encashment to be removed (not per KB policy); Fleet Management sub-module removed from HR scope. Enhancements: salary structures to auto-load all components (no manual selection); salary slips to show remaining leave balance. Pending from HR team: updated employee master data (active/inactive) for migration and standardized MIS report formats with data point explanations.',
+    status: 'completed',
+  },
+
   {
     id: 'mar-end-site-ho-visit',
     date: 'Mar 28, 2026',
@@ -289,6 +326,17 @@ export const timelineData: TimelineItem[] = [
     title: '⚠️ BOQ to WBS Automation Workflow Suggested',
     description: 'Raised during the Site + HO Visit: Automate conversion of BOQ (Bill of Quantities) line items into a WBS (Work Breakdown Structure) to eliminate manual re-entry and keep planning, budgeting, and execution in sync.',
     status: 'new-scope',
+  },
+
+  {
+    id: 'mar-end-site-visit-tracker',
+    date: 'Mar 28, 2026',
+    category: 'Documentation',
+    title: 'Change Request Tracker Created',
+    description: 'Following the Site + HO Visit, a consolidated change request tracking sheet was created to document all module-level feedback and action items raised during the visit.',
+    status: 'completed',
+    link: 'https://docs.google.com/spreadsheets/u/1/d/1kHg8aX5Jw2Z_YNDrY4KFFeYoP1N0gFXQb5BqNNjH4aQ/edit?gid=0#gid=0',
+    linkLabel: 'View Change Request Tracker',
   },
 
   // March–April 2026 — Change Requests from Site + HO Visit
@@ -407,6 +455,24 @@ export const timelineData: TimelineItem[] = [
     status: 'new-scope',
   },
 
+  // April 2026 — MoM Follow-ups
+  {
+    id: 'apr-07-mom-labour-subcon',
+    date: 'Apr 07, 2026',
+    category: 'Meeting',
+    title: 'MoM — Labour & Subcontractor Billing Discussion',
+    description: 'Meeting covered the full Subcontractor P2P workflow: Quotation → Negotiation → Work Order (MD + VP approval required). Built-up work needs Payment Stage toggle; invoices triggered from cumulative stage. Sq.m (client BOQ) to Sq.ft (subcontractor BOQ) auto-conversion required. Formal Subcontractor Exit Form for F&F settlement. Labour categorized into Departmental and Skilled with bi-weekly/monthly payment cycles; weekly Kharchi advances to be tracked and deducted from main bill. Billing logic: Item Rate = Previous + This = Cumulative; Built-up = This = Cumulative − Previous. Hard Stop rule: actuals cannot exceed planned/budget without MD approval. Outstanding items flagged: GST/TDS/Labour Cess not yet addressed, Retention Money (5–10%) logic needed, Debit Note module for material deductions, WO Variation/Extra Item process required, role-based edit restrictions for Billing and Sr. Engineers.',
+    status: 'completed',
+  },
+  {
+    id: 'apr-08-mom-docs',
+    date: 'Apr 08, 2026',
+    category: 'Documentation',
+    title: 'MoM Documents Received from Aishwarya',
+    description: 'Aishwarya Saha shared: Housekeeping Bill (Arfat Yunus Sayyed), Challan copy, and Workhead List. Confirmed subcontractor module flow was already drawn and handed to Prathamesh in previous months. Pending from KB: Concrete Summary Sheet, Concrete Mix Design Sheet, VTP Volare Users/Employee List, Machinery List, Item Rate Bills, Item Rate Work Order, Payment Details Sheet.',
+    status: 'completed',
+  },
+
   // May 2026
   {
     id: 'may-sandwich-policy',
@@ -417,12 +483,37 @@ export const timelineData: TimelineItem[] = [
     status: 'completed',
   },
   {
-    id: 'may-jun-data-import',
+    id: 'may-data-format-issues',
+    date: 'May 2026',
+    category: 'Critical',
+    title: '⚠️ Data Received in Incorrect Formats — Import Delayed',
+    description: 'Data provided by KB team for migration was initially not in the required format, causing delays in the import process. Even after corrections were requested, residual inconsistencies remained. Siyaratech team took additional efforts to clean, map, and reconcile the data to meet system requirements rather than blocking progress.',
+    status: 'gap',
+    delayReason: 'KB-provided data not aligned to import format; multiple correction cycles required before data could be loaded.',
+  },
+  {
+    id: 'may-boq-ra-wbs-upload',
     date: 'May 2026',
     category: 'Process',
-    title: 'Data Import Development (May–Jun 2026)',
-    description: 'Significant development effort across May and June to build data import capabilities — enabling bulk migration of existing project data (masters, transactions, historical records) into PramodOne to support go-live readiness.',
-    status: 'ongoing',
+    title: 'Siyaratech Uploads BOQ, Rate Analysis & WBS',
+    description: 'Siyaratech team took on the additional effort of uploading BOQ, Rate Analysis, and WBS structures on behalf of KB team using the data received — noting that WBS was uploaded without BOQ quantities linked due to data gaps. Multiple KB staff members also requested Siyaratech to handle their data uploads directly rather than doing it themselves.',
+    status: 'completed',
+  },
+  {
+    id: 'may-data-workarounds',
+    date: 'May 2026',
+    category: 'Process',
+    title: 'Quick Fixes & Workarounds for KB Data Dumps',
+    description: 'To prevent any go-live blockers, Siyaratech rapidly fixed system issues and provided workarounds so KB team could continue dumping data even when it did not conform to the standard flow or import mechanism. Changes were turned around quickly to ensure KB team momentum was not lost.',
+    status: 'completed',
+  },
+  {
+    id: 'may-data-implementation-kudos',
+    date: 'May 2026',
+    category: 'Milestone',
+    title: 'Data Implementation — Key Contributions',
+    description: 'Notable individual contributions during the data implementation phase: Rupesh Patil successfully uploaded Purchase Orders (PO) and Purchase Requests (PR) data into the system. Jadhav Sir handled the attendance data upload. Strong execution by the team under tight turnaround conditions.',
+    status: 'completed',
   },
 ];
 

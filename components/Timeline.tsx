@@ -102,6 +102,17 @@ const TimelineItem = ({ item, index }: { item: any, index: number }) => {
                             <span className="text-red-300">{item.delayReason}</span>
                         </div>
                     )}
+
+                    {item.link && (
+                        <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 mt-3 text-xs text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
+                        >
+                            {item.linkLabel ?? 'View Reference'}
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
