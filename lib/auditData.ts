@@ -328,7 +328,7 @@ export const scopeAdditions: ScopeAddition[] = [
   { date: 'Mar 28 – Apr 30', title: 'Site visit + MD review wave', original: 'Modules built to HOD-agreed flows', added: '334 hrs estimated; ~90 enhancements delivered across 13 modules' },
   { date: 'Apr 7, 2026', title: 'Subcontractor Management', original: 'Client billing only', added: 'Work orders, payment stages, invoices, BOQ, exit form; Item Rate vs Built-Up math, m²↔ft², MD/VP gates' },
   { date: 'May 2026', title: 'Biometric + face attendance', original: 'Separate billing', added: 'ADMS device sync + face recognition for staff and labour (tested, to be deployed)' },
-  { date: 'Jun 2026', title: 'June change requests', original: '—', added: 'All-in-one RFI, safety approvals & navigation, work permits, HR form changes, ~60 pending items' },
+  { date: 'Jun 2026', title: 'June change requests', original: '—', added: 'All-in-one RFI, safety approvals & navigation, work permits, HR form changes; all implemented except future-scope items' },
 ];
 
 // ---- Modules: planned vs built ----
@@ -360,10 +360,10 @@ export const modules: ModuleRow[] = [
   { name: 'Subcontractor Mgmt', tag: 'new', status: 'Live', planned: 'Not mentioned', delivered: 'Work orders with payment stages, invoices, subcontractor BOQ, Kharchi, exit form; dedicated screens.', evidence: '12+ DocTypes · frontend 77 iterations' },
   { name: 'Labour Management', tag: 'new', status: 'Live', planned: 'Not mentioned', delivered: 'Attendance, onboarding, work assignment, DLR / DLCR costing, Kharchi, subcontractor labour.', evidence: 'kb_labour_management · 27 DocTypes · 80 commits' },
   { name: 'Central Hub', tag: 'new', status: 'Live', planned: 'Not mentioned', delivered: 'P&L across all machinery and owned assets.', evidence: 'frontend CentralHub · 60 iterations' },
-  { name: 'Biometric & Face', tag: 'separate', status: 'Tested, to deploy', planned: 'Separate billing', delivered: 'ADMS sync service for eSSL/ZKTeco devices; face enrolment & recognition for staff and labour.', evidence: 'adms-sync-service + 7 biometric pages' },
+  { name: 'Biometric & Face', tag: 'separate', status: 'Implemented', planned: 'Separate billing', delivered: 'ADMS sync service for eSSL/ZKTeco devices; face enrolment & recognition for staff and labour. Full integration implemented (June tracker).', evidence: 'adms-sync-service + 7 biometric pages' },
   { name: 'Tally Integration', tag: 'separate', status: 'Tested, to deploy', planned: 'Separate billing', delivered: 'Accounts sync with Tally. Deployment waiting on KB\'s Tally licence.', evidence: 'Accounts sync flow' },
   { name: 'Integrated Communication', tag: 'as-planned', status: 'Live', planned: 'Basic backend', delivered: 'Email communication and comments on every form.' },
-  { name: 'Reporting & Dashboards', tag: 'as-planned', status: 'Partial', planned: 'Basic backend', delivered: 'Module dashboards + 22 reports live. Management dashboards after data entry (agreed sequencing).', june: 'New changes suggested module-wise' },
+  { name: 'Reporting & Dashboards', tag: 'as-planned', status: 'Live', planned: 'Basic backend', delivered: 'Module dashboards, 22 reports, and higher-management dashboards (built after data entry, as agreed).', june: 'Higher-management dashboards; module-wise changes' },
   { name: 'Data Migration', tag: 'as-planned', status: 'Live', planned: 'Basic backend', delivered: 'Bulk import / export tooling; SiyaraTech imported BOQ, RA and WBS itself.' },
   { name: 'Measurement Forms', tag: 'removed', status: 'Built & removed', planned: 'Not mentioned', delivered: 'Concrete & shuttering measurement forms were fully built and linked to Planning, field-tested, then removed at KB\'s direction because site measurements change too often. Quantity DocTypes kept for future use.' },
 ];
