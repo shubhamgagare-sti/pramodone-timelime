@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Activity, ArrowRight, Boxes, ExternalLink, FileText, CalendarRange, LayoutDashboard, Scale, TrendingUp, X } from 'lucide-react';
+import { Activity, ArrowRight, Boxes, ExternalLink, FileText, IndianRupee, CalendarRange, LayoutDashboard, Scale, TrendingUp, X } from 'lucide-react';
 import clsx from 'clsx';
 import { auditKpis, coreFacts } from '@/lib/auditData';
 import ClaimsBoard from './ClaimsBoard';
@@ -97,16 +98,26 @@ const AuditDashboard: React.FC = () => {
                     <span className="text-gradient">Technical Audit &amp; Rebuttal</span>
                 </h2>
                 <p className="text-gray-400 text-sm mt-2">PramodOne ERP (Project KB-Connect) · Jul 2025 – Sep 2026 · evidence from emails, MoMs, release logs &amp; work logs</p>
-                <a
-                    href={AUDIT_DOC_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-lg bg-indigo-500/20 border border-indigo-400/40 text-indigo-100 text-sm font-medium hover:bg-indigo-500/30 transition-colors"
-                >
-                    <FileText className="w-4 h-4" />
-                    Read the full audit document
-                    <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-                </a>
+                <div className="flex flex-wrap justify-center gap-2 mt-4">
+                    <a
+                        href={AUDIT_DOC_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-500/20 border border-indigo-400/40 text-indigo-100 text-sm font-medium hover:bg-indigo-500/30 transition-colors"
+                    >
+                        <FileText className="w-4 h-4" />
+                        Read the full audit document
+                        <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                    </a>
+                    <Link
+                        href="/costing"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-pink-500/15 border border-pink-400/40 text-pink-100 text-sm font-medium hover:bg-pink-500/25 transition-colors"
+                    >
+                        <IndianRupee className="w-4 h-4" />
+                        View development costing
+                        <ArrowRight className="w-3.5 h-3.5 opacity-70" />
+                    </Link>
+                </div>
             </div>
 
             <div className="flex gap-1 overflow-x-auto [scrollbar-width:none] p-1 rounded-xl bg-white/5 border border-white/10 mb-6">

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 import CostEstimate from '@/components/costing/CostEstimate';
 
 export const metadata: Metadata = {
@@ -10,6 +12,9 @@ export default function CostingPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] flex flex-col overflow-x-hidden font-sans">
       <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white mb-6">
+          <ArrowLeft className="w-4 h-4" /> Back to dashboard
+        </Link>
         <div className="text-center mb-8">
           <div className="inline-block mb-3 px-3 py-1 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-200 text-xs font-medium tracking-wide">
             Internal · Siyaratech
