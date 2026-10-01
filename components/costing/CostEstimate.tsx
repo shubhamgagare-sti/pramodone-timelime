@@ -40,18 +40,19 @@ const CostEstimate: React.FC = () => {
     const [hoursPerWeek, setHoursPerWeek] = useState(45);
     const [actualTeam, setActualTeam] = useState(4);
     const [actualWeeks, setActualWeeks] = useState(buildWeeks);
+    const [allocation, setAllocation] = useState(87); // average % of the core team actually on the project
 
     const effort = useMemo(() => {
         const plannedHours = quoteTeam * hoursPerWeek * ORIGINAL_WEEKS;
         const rate = plannedHours ? ORIGINAL_QUOTE / plannedHours : 0;
-        const actualHours = actualTeam * hoursPerWeek * actualWeeks;
+        const actualHours = Math.round(actualTeam * hoursPerWeek * actualWeeks * (allocation / 100));
         return { plannedHours, rate, actualHours, value: actualHours * rate, multiple: plannedHours ? actualHours / plannedHours : 0 };
-    }, [quoteTeam, hoursPerWeek, actualTeam, actualWeeks]);
+    }, [quoteTeam, hoursPerWeek, actualTeam, actualWeeks, allocation]);
 
     const methods = [
         { key: 'orig', label: 'Original 12-week quote', low: ORIGINAL_QUOTE, high: ORIGINAL_QUOTE, color: '#94a3b8', note: 'What was priced' },
         { key: 'items', label: 'A · Itemised unplanned work', low: ORIGINAL_QUOTE + extra, high: ORIGINAL_QUOTE + extra, color: '#818cf8', note: `Quote + ${lakh(extra)} of listed items` },
-        { key: 'effort', label: 'B · Effort at the quoted rate', low: effort.value, high: effort.value, color: '#f472b6', note: `${effort.multiple.toFixed(1)}× the planned hours` },
+        { key: 'effort', label: 'B · Effort at the quoted rate', low: effort.value, high: effort.value, color: '#f472b6', note: `${effort.multiple.toFixed(1)}× the planned hours, excl. founder consulting` },
         { key: 'scope', label: 'C · Scope share (20–25% planned)', low: ORIGINAL_QUOTE / SCOPE_SHARE.high, high: ORIGINAL_QUOTE / SCOPE_SHARE.low, color: '#fb923c', note: 'If the quote covered only 20–25% of the build' },
     ];
     const axisMax = Math.max(...methods.map((m) => m.high)) * 1.3;
@@ -126,6 +127,14 @@ const CostEstimate: React.FC = () => {
                         <NumberField label="Hours / person / week" value={hoursPerWeek} onChange={setHoursPerWeek} />
                         <NumberField label="Actual core team" value={actualTeam} onChange={setActualTeam} hint="developers on the build" />
                         <NumberField label="Actual build weeks" value={actualWeeks} onChange={setActualWeeks} hint="Sep 17, 2025 → Sep 26, 2026" />
+                        <div className="col-span-2">
+                            <NumberField
+                                label="Average team allocation (%)"
+                                value={allocation}
+                                onChange={(v) => setAllocation(Math.min(100, v))}
+                                hint="Below 100% because one developer left in July and the frontend developer was part-time"
+                            />
+                        </div>
                     </div>
                     <div className="grid grid-cols-3 gap-2 mt-4">
                         {[
@@ -140,12 +149,15 @@ const CostEstimate: React.FC = () => {
                         ))}
                     </div>
                     <div className="mt-3 rounded-lg border border-pink-500/40 bg-pink-500/10 p-3 flex items-baseline justify-between">
-                        <span className="text-xs text-pink-200">Value of effort</span>
+                        <span className="text-xs text-pink-200">
+                            Value of development effort
+                            <span className="block text-[10px] text-pink-200/70">Excludes founder consulting (Rohit Sonawale)</span>
+                        </span>
                         <span className="text-xl font-bold text-white">{lakh(effort.value)}</span>
                     </div>
                     <p className="flex gap-1.5 text-[10px] text-gray-500 mt-2">
                         <Info className="w-3 h-3 shrink-0 mt-px" />
-                        Only {DOCUMENTED_HOURS.person}&apos;s {DOCUMENTED_HOURS.hours.toLocaleString('en-IN')} hrs ({DOCUMENTED_HOURS.from} – {DOCUMENTED_HOURS.to}) are documented, which is ~45 hrs/week. The rest of the team is assumed at the same pace; replace with timesheet totals.
+                        Only {DOCUMENTED_HOURS.person}&apos;s {DOCUMENTED_HOURS.hours.toLocaleString('en-IN')} hrs ({DOCUMENTED_HOURS.from} – {DOCUMENTED_HOURS.to}) are documented, which is ~45 hrs/week. The rest of the team is assumed at the same pace, adjusted by the allocation above; replace with timesheet totals.
                     </p>
                 </div>
             </div>
@@ -159,7 +171,7 @@ const CostEstimate: React.FC = () => {
                 </p>
                 <p>
                     <b className="text-pink-200">B ({lakh(effort.value)})</b> prices the time actually spent at the rate KB already accepted. It is the fairest measure of
-                    effort, but depends on real timesheet totals.
+                    effort, but depends on real timesheet totals. Founder consulting (Rohit Sonawale) is not included and would be on top.
                 </p>
                 <p>
                     <b className="text-orange-200">C ({lakh(ORIGINAL_QUOTE / SCOPE_SHARE.high)} – {lakh(ORIGINAL_QUOTE / SCOPE_SHARE.low)})</b> uses the estimate that the
